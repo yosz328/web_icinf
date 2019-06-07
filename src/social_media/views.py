@@ -1,12 +1,14 @@
 import tweepy
+from .models import Post
 from django.conf import settings
 from rest_framework import status
 from django.shortcuts import render
-from django.http import HttpResponse
 from .serializers import PostSerializer
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
+from rest_framework.decorators import api_view
 from rest_framework.renderers import JSONRenderer
+from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
 
@@ -25,9 +27,9 @@ def index_media(request):
 def facebook(request):
 	return HttpResponse('fb')
 
+# @api_view(['GET', 'POST', ])
 @csrf_exempt
-def twit(request):
-	# TODO: try it
+def twit(request, format=None):
 	auth = tweepy.OAuthHandler(settings.CONSUMER_KEY, settings.CONSUMER_SECRET)
 	auth.set_access_token(settings.ACCESS_KEY, settings.ACCESS_SECRET)
 	api = tweepy.API(auth)
@@ -38,7 +40,7 @@ def twit(request):
 		
 		if serializer.is_valid():
 			try:
-				api.update_status(status = 'messagge')
+				api.update_status(status=serializer.validated_data.get('text'))
 				serializer.save()
 				return JSONResponse(serializer.data, status=201)
 			except tweepy.TweepError as error:
@@ -48,6 +50,11 @@ def twit(request):
 		
 		return JSONResponse(serializer.errors, status=400)
 	
+	elif request.method == 'GET':
+		posts = Post.objects.filter(active=True)
+		serializer = PostSerializer(posts, many=True)
+		return JsonResponse(serializer.data, safe=False)
+
 	else:
 		content = {'error': 'method not implemented'}
 		return Response(content, status=status.HTTP_501_NOT_IMPLEMENTED)
