@@ -1,0 +1,81 @@
+---
+swagger: "2.0"
+info:
+  description: "Servicio para mandar mensajes a redes sociales"
+  version: "1.0.0"
+  title: "Servicio redes sociales Icinf"
+  termsOfService: "http://unab.cl"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+basePath: "/icinf"
+tags:
+- name: "Twiter"
+  description: "Uso de API twitter"
+- name: "Facebook"
+  description: "Uso de API facebook"
+schemes:
+- "https"
+- "http"
+paths:
+  /tweet:
+    post:
+      tags:
+      - "Twiter"
+      summary: "envia un tweet"
+      description: ""
+      operationId: "addtweet"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "tweet que sera enviado"
+        required: true
+        schema:
+          $ref: "#/definitions/Mensaje"
+      responses:
+        200:
+          description: "OK"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.twiter_controller"
+  /fbpost:
+    post:
+      tags:
+      - "Facebook"
+      summary: "envia un Post"
+      description: ""
+      operationId: "addpost"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "post que sera enviado"
+        required: true
+        schema:
+          $ref: "#/definitions/Mensaje"
+      responses:
+        200:
+          description: "OK"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.facebook_controller"
+definitions:
+  Mensaje:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+    example:
+      message: "Hola compañeros"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
