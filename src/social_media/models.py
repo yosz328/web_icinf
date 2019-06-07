@@ -23,7 +23,7 @@ class Post(models.Model):
 
 	# TODO: Define fields here
 	text = models.TextField(blank=True, default='', verbose_name='Cuerpo/mensaje del post.')
-	images = models.ForeignKey('PostImage', on_delete=models.CASCADE, null=True, verbose_name='Imágenes del post.')
+	# images = models.ForeignKey('PostImage', on_delete=models.CASCADE, null=True, verbose_name='Imágenes del post.')
 	active = models.BooleanField(
 		default=True, verbose_name='Activo', 
 		help_text='Las filas con este campo desactivado no serán mostradas.'

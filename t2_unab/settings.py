@@ -126,3 +126,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/static/'
+
+# Twitter config
+if DEBUG:
+	CONSUMER_KEY = '6iRsWenJOXgyE0q6Vtxn80Z2X'
+	CONSUMER_SECRET = 'Meh7OOhko50o4V2xhqmQLyH3O7fMrn6oFPxefOqSMmPm7TNw1r'
+	ACCESS_KEY = '2593998445-T4brN6M4rJlmQaG0m2iwzj9El2M1xMe8FgEYqx4'
+	ACCESS_SECRET = 'LfCJXUYqbxop9qnt0RzniixKhDaSEtF8XaPKE34I4siYP'
