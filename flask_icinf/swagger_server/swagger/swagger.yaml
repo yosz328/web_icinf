@@ -68,6 +68,30 @@ paths:
         405:
           description: "Invalid input"
       x-swagger-router-controller: "swagger_server.controllers.facebook_controller"
+  /fbphoto:
+    post:
+      tags:
+      - "Facebook"
+      summary: "envia post con foto"
+      description: ""
+      operationId: "addphoto"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "foto que sera enviada"
+        required: true
+        schema:
+          $ref: "#/definitions/Fotos"
+      responses:
+        200:
+          description: "OK"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.facebook_controller"
 definitions:
   Mensaje:
     type: "object"
@@ -76,6 +100,16 @@ definitions:
         type: "string"
     example:
       message: "Hola compañeros"
+  Fotos:
+    type: "object"
+    properties:
+      url:
+        type: "string"
+      caption:
+        type: "string"
+    example:
+      url: "https://www.facebook.com/images/fb_icon_325x325.png"
+      caption: "test photo upload"
 externalDocs:
   description: "Find out more about Swagger"
   url: "http://swagger.io"
