@@ -1,0 +1,29 @@
+<form>
+	<div class="form-group">
+	  <label for="exampleInputEmail1">Texto</label>
+	  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter text">
+	  
+	</div>
+	
+	
+	<button type="submit" class="btn btn-primary" onclick="alert('Mensaje enviado 8==D~~*')">Enviar</button>
+</form>
+
+<script>
+	$http({
+		method: 'POST',
+		url: 'http://localhost:8080/rrss/twitter/post',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		data = {
+			'text': 'texto de prueba c:'
+		}
+	  }).then(function successCallback(response) {
+		  // this callback will be called asynchronously
+		  // when the response is available
+		}, function errorCallback(response) {
+		  // called asynchronously if an error occurs
+		  // or server returns response with an error status.
+		});
+</script>

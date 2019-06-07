@@ -4,3 +4,4 @@ db.sqlite3
 src/base/migrations
 src/social_media/migrations
 env
+front-end/node_modules

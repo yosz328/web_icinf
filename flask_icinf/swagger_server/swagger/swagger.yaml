@@ -3,14 +3,14 @@ swagger: "2.0"
 info:
   description: "Servicio para mandar mensajes a redes sociales"
   version: "1.0.0"
-  title: "Servicio redes sociales Icinf"
+  title: "Servicio redes sociales Icf"
   termsOfService: "http://unab.cl"
   contact:
     email: "apiteam@swagger.io"
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-basePath: "/icinf"
+basePath: "/icf"
 tags:
 - name: "Twiter"
   description: "Uso de API twitter"
