@@ -19,7 +19,7 @@ import { InicioComponent } from './inicio/inicio.component';
 
 const routes: Routes = [
   { path: 'noticias', component: NoticiasComponent },
-  { path: 'perfil', component: PerfilComponent },
+  { path: 'publica', component: PerfilComponent },
   { path: 'profesores', component: ProfesoresComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'materialapoyo', component: MaterialapoyoComponent },
