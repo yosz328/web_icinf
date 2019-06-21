@@ -14,10 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
 from django.urls import include, path
 from django.conf.urls.static import static
-from django.conf import settings
+from rest_framework_swagger.views import get_swagger_view
 
+schema_view = get_swagger_view(title='ICF UNAB API')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +27,7 @@ urlpatterns = [
 	path('rrss/', include('src.social_media.urls')),
 	path('news/', include('src.news.urls')),
 	path('teachers/', include('src.teachers.urls')),
+	path('docs/', schema_view),
 ]
 
 if settings.DEBUG:

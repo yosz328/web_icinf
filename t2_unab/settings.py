@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
     # third party modules
     'rest_framework',
+	'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [
