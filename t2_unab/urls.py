@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 	path('', include('src.base.urls')),
 	path('rrss/', include('src.social_media.urls')),
+	path('news/', include('src.news.urls')),
 ]
 
 if settings.DEBUG:
