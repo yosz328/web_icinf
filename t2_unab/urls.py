@@ -24,6 +24,7 @@ urlpatterns = [
 	path('', include('src.base.urls')),
 	path('rrss/', include('src.social_media.urls')),
 	path('news/', include('src.news.urls')),
+	path('teachers/', include('src.teachers.urls')),
 ]
 
 if settings.DEBUG:
