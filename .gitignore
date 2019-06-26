@@ -14,3 +14,4 @@ src/support_material/migrations
 src/support_material/__pycache__
 t2_unab/__pycache__
 front-end/node_modules
+media

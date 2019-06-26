@@ -27,8 +27,10 @@ urlpatterns = [
 	path('rrss/', include('src.social_media.urls')),
 	path('news/', include('src.news.urls')),
 	path('teachers/', include('src.teachers.urls')),
+   	path('material/', include('src.support_material.urls')),
 	path('docs/', schema_view),
 ]
 
 if settings.DEBUG:
 	urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
