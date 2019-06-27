@@ -25,7 +25,7 @@ SECRET_KEY = 'mq=&!xr3c_wpvpo8xloc&+$6&vsx)fj^j(j%ysw%rfb=d5ojv9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['104.248.253.159', 'localhost']
+ALLOWED_HOSTS = ['104.248.253.159', 'localhost', ]
 
 
 # Application definition
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 	'src.support_material.apps.SupportMaterialConfig',
 
     # third party modules
+	'corsheaders',
     'rest_framework',
 	'rest_framework_swagger',
 ]
@@ -54,6 +55,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+	'corsheaders.middleware.CorsMiddleware',
 	'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -141,3 +143,10 @@ if DEBUG:
 	CONSUMER_SECRET = 'Meh7OOhko50o4V2xhqmQLyH3O7fMrn6oFPxefOqSMmPm7TNw1r'
 	ACCESS_KEY = '2593998445-T4brN6M4rJlmQaG0m2iwzj9El2M1xMe8FgEYqx4'
 	ACCESS_SECRET = 'LfCJXUYqbxop9qnt0RzniixKhDaSEtF8XaPKE34I4siYP'
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_METHODS = [
+	'GET',
+	'POST',
+]
