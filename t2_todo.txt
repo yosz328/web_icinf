@@ -1,0 +1,17 @@
+notificacion de profesores
+consultar api de la u para recibir notificaciones de notas y otras cosas
+añadir seccion de opiniones => foro de opiniones
+tener a los alumnos registrados para no mostrar toda la informacion (filtrar por alumnos, iniciar sesion)
+generar feedback de comentarios
+tener distintos permisos por perfil (CAA con otros privilegios para acceder a otro tipo de secciones)
+
+
+referencias de diseño (como nos gustaria que fuera)
+
+funcionalidades:
+usuarios (cein y director de carrera)
+que la publicacion de cosas se expanda por medio de la pagina (twitter, fb, insta)
+registrar eventos y que se pueda ver a traves de una app movil (crear el servicio rest)
+material de estudio, programas e informacion de asignaturas, malla curricular
+procedimientos e informacion de la carrera
+seccion "guia del estudiante" para los estudiantes nuevos (si necesitas hacer esto, has esto) => pregunta:respuesta
