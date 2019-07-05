@@ -6,7 +6,7 @@ Inicio de página web para la carrera de ingeniería civil informática UNAB.
 
 Esta aplicacion emplea el uso de distintas herramientas para su correcto funcionamiento:
 
-* [Python](https://www.python.org/) Python!
+* [Python3](https://www.python.org/) Python!
 * [Django](https://www.djangoproject.com/) - Python Web Framework
 * [DjangoRestFramework](https://www.django-rest-framework.org/) - Python toolkit para web APIs
 * [Tweepy](https://github.com/tweepy/tweepy) - Python API de Twitter
@@ -32,7 +32,7 @@ $ docker-compose up -d
 O bien, solo instale Django y las dependencias del proyecto para iniciar el servidor:
 ```bash
 $ pip install -r requirements.txt
-$ python manage.py makemigrations
-$ python manage.py migrate
-$ python manage.py runserver 0:8080
+$ python3 manage.py makemigrations
+$ python3 manage.py migrate
+$ python3 manage.py runserver 0:8080
 ```
