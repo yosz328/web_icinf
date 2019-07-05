@@ -6,7 +6,7 @@ Inicio de página web para la carrera de ingeniería civil informática UNAB.
 
 Esta aplicacion emplea el uso de distintas herramientas para su correcto funcionamiento:
 
-* [Python3](https://www.python.org/) Python!
+* [Python](https://www.python.org/) Python!
 * [Django](https://www.djangoproject.com/) - Python Web Framework
 * [DjangoRestFramework](https://www.django-rest-framework.org/) - Python toolkit para web APIs
 * [Tweepy](https://github.com/tweepy/tweepy) - Python API de Twitter
